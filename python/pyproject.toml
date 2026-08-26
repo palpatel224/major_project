@@ -1,0 +1,16 @@
+[project]
+name = "oct-sidecar"
+version = "0.1.0"
+description = "Python sidecar for OCT Insight Desktop"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0.0",
+    "opencv-python>=4.8.0",
+    "llama-cpp-python>=0.2.0",
+    "numpy>=1.24.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

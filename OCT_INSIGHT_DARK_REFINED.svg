@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#05070A"/><stop offset=".55" stop-color="#10151B"/><stop offset="1" stop-color="#030405"/>
+    </linearGradient>
+    <style>
+      text{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#D4D4D4}.mono{font-family:"SF Mono",Menlo,monospace}.t10{font-size:10px}.t11{font-size:11px}.t12{font-size:12px}.t13{font-size:13px}.t14{font-size:14px}.t16{font-size:16px}.t20{font-size:20px}.med{font-weight:500}.semi{font-weight:600}.bold{font-weight:700}.muted{fill:#8B949E}.bright{fill:#F0F0F0}.blue{fill:#75BEFF}.cyan{fill:#4EC9B0}.purple{fill:#C586C0}.amber{fill:#D7BA7D}.stroke{fill:none;stroke:#C8C8C8;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}.strokeM{fill:none;stroke:#858585;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+    <g id="oct">
+      <rect width="486" height="336" rx="3" fill="url(#scan)"/>
+      <path d="M8 86C74 42 143 50 215 86C294 126 365 124 478 57" fill="none" stroke="#59616B" stroke-width="8" opacity=".27"/>
+      <path d="M8 106C78 64 145 70 218 104C296 141 368 139 478 79" fill="none" stroke="#BFC4CB" stroke-width="3.5" opacity=".58"/>
+      <path d="M8 124C80 84 147 90 221 122C300 157 370 155 478 100" fill="none" stroke="#F0F1F2" stroke-width="2.3" opacity=".84"/>
+      <path d="M8 142C83 104 151 109 225 140C304 173 374 171 478 120" fill="none" stroke="#838B95" stroke-width="10" opacity=".28"/>
+      <path d="M8 166C86 130 155 135 230 164C309 196 378 193 478 146" fill="none" stroke="#F5F5F5" stroke-width="3.7" opacity=".87"/>
+      <path d="M8 191C91 157 160 160 235 190C315 220 383 216 478 172" fill="none" stroke="#AEB4BC" stroke-width="9" opacity=".24"/>
+      <path d="M8 216C94 184 165 186 240 215C320 244 387 240 478 199" fill="none" stroke="#E1E4E7" stroke-width="3" opacity=".65"/>
+      <path d="M8 244C98 215 171 216 247 244C327 272 393 267 478 230" fill="none" stroke="#818994" stroke-width="12" opacity=".21"/>
+      <path d="M8 277C105 251 178 250 254 276C334 303 400 297 478 265" fill="none" stroke="#EFF1F2" stroke-width="3" opacity=".71"/>
+      <path d="M8 309C112 286 187 284 263 308C343 333 408 327 478 300" fill="none" stroke="#505762" stroke-width="18" opacity=".2"/>
+    </g>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#151719"/>
+
+  <!-- product app bar, not VS Code chrome -->
+  <rect width="1600" height="64" fill="#1C1E21"/><line x1="0" y1="63.5" x2="1600" y2="63.5" stroke="#303238"/>
+  <rect x="18" y="16" width="32" height="32" rx="7" fill="#007ACC"/><path d="M26 33c5-11 13-11 18 0-5 10-13 10-18 0z" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="35" cy="33" r="3" fill="#fff"/>
+  <text x="62" y="37" class="t16 semi bright">OCT Insight</text>
+  <line x1="178" y1="16" x2="178" y2="48" stroke="#34363B"/>
+  <text x="196" y="25" class="t10 muted">CURRENT CASE</text><text x="196" y="44" class="t13 med bright">OCT-2408 · Right eye (OD) · 12 Aug 2026</text>
+  <rect x="1214" y="14" width="112" height="36" rx="5" fill="#25272B" stroke="#43464C"/><path d="M1230 24h14l4 4v12h-18zM1234 21h9l5 5" class="strokeM"/><text x="1258" y="37" class="t12">Open study</text>
+  <rect x="1338" y="14" width="104" height="36" rx="5" fill="#0E639C"/><path d="M1355 23v13m-5-5 5 5 5-5m-11 10h13" class="stroke"/><text x="1374" y="37" class="t12 bright">Export</text>
+  <rect x="1454" y="14" width="126" height="36" rx="5" fill="#202C27" stroke="#315642"/><circle cx="1472" cy="32" r="4" fill="#4EC9B0"/><text x="1484" y="36" class="t12 cyan">Offline · local</text>
+
+  <!-- adaptive study sidebar -->
+  <rect x="0" y="64" width="284" height="912" fill="#181A1D"/><line x1="283.5" y1="64" x2="283.5" y2="976" stroke="#303238"/>
+  <text x="18" y="91" class="t11 med bright">STUDY</text><text x="250" y="91" class="t14 muted">•••</text>
+  <rect x="16" y="104" width="252" height="34" rx="4" fill="#202226" stroke="#3B3E44"/><path d="M29 113h14l4 4v12H29zM33 110h9l5 5" class="stroke"/><text x="57" y="126" class="t12 bright">Open image…</text><text x="226" y="126" class="t10 muted">⌘O</text>
+  <path d="M19 160l5 5 5-5" class="strokeM"/><text x="36" y="165" class="t11 semi bright">OCT-2408 · 2 SERIES</text>
+  <rect x="16" y="179" width="252" height="82" rx="5" fill="#24272D" stroke="#3E424A"/><rect x="16" y="179" width="3" height="82" fill="#007ACC"/>
+  <rect x="29" y="192" width="68" height="48" rx="3" fill="#07090C"/><path d="M34 217c16-13 36-9 58 2M34 225c17-11 37-7 58 3M34 233c18-9 37-5 58 3" fill="none" stroke="#AEB4BC" opacity=".8"/>
+  <text x="108" y="202" class="t12 semi bright">Macular cube</text><text x="108" y="221" class="t11 muted">512 × 496 · 128 slices</text><text x="108" y="239" class="t11 muted">OD · spacing 0.047 mm</text>
+  <rect x="22" y="271" width="246" height="30" fill="#37373D"/><path d="M34 278h11l4 4v11H34zM45 278v4h4" fill="none" stroke="#75BEFF" stroke-width="1.2"/><text x="58" y="291" class="t12 bright">B-scan 0048.dcm</text><text x="230" y="291" class="t10 muted">48/128</text>
+  <path d="M24 315l5 5-5 5" class="strokeM"/><text x="42" y="324" class="t12 muted">Radial scan · OD</text>
+  <line x1="16" y1="346" x2="268" y2="346" stroke="#303238"/>
+
+  <text x="18" y="373" class="t11 med bright">IMAGE CONTROLS</text><text x="252" y="373" class="t11 muted">⌃</text>
+  <text x="18" y="399" class="t10 muted">DISPLAY</text><rect x="18" y="407" width="250" height="30" rx="3" fill="#202226" stroke="#3B3E44"/><text x="29" y="427" class="t12">Original + model output</text><path d="M247 417l5 5 5-5" class="strokeM"/>
+  <text x="18" y="463" class="t10 muted">MODEL</text><rect x="18" y="471" width="250" height="30" rx="3" fill="#202226" stroke="#3B3E44"/><circle cx="32" cy="486" r="4" fill="#4EC9B0"/><text x="45" y="490" class="t12">CYST Segmentation v1.4</text><path d="M247 481l5 5 5-5" class="strokeM"/>
+  <text x="18" y="527" class="t10 muted">WINDOW</text><text x="226" y="527" class="t10">52 / 106</text><line x1="20" y1="542" x2="266" y2="542" stroke="#414349" stroke-width="3" stroke-linecap="round"/><line x1="84" y1="542" x2="204" y2="542" stroke="#007ACC" stroke-width="3"/><circle cx="84" cy="542" r="5" fill="#D4D4D4"/><circle cx="204" cy="542" r="5" fill="#D4D4D4"/>
+  <text x="18" y="580" class="t10 muted">OVERLAYS</text>
+  <rect x="19" y="591" width="13" height="13" rx="1" fill="#007ACC"/><path d="M22 597l3 3 5-6" fill="none" stroke="#fff" stroke-width="1.3"/><circle cx="46" cy="597.5" r="4" fill="#4EC9B0"/><text x="59" y="602" class="t12">Cyst mask</text>
+  <rect x="19" y="619" width="13" height="13" rx="1" fill="#007ACC"/><path d="M22 625l3 3 5-6" fill="none" stroke="#fff" stroke-width="1.3"/><circle cx="46" cy="625.5" r="4" fill="#C586C0"/><text x="59" y="630" class="t12">ILM boundary</text>
+  <rect x="19" y="647" width="13" height="13" rx="1" fill="#1A1C1F" stroke="#666A70"/><circle cx="46" cy="653.5" r="4" fill="#D7BA7D"/><text x="59" y="658" class="t12 muted">Probability map</text>
+  <text x="18" y="696" class="t10 muted">MASK OPACITY</text><text x="235" y="696" class="t10">42%</text><line x1="20" y1="711" x2="266" y2="711" stroke="#414349" stroke-width="3"/><line x1="20" y1="711" x2="123" y2="711" stroke="#007ACC" stroke-width="3"/><circle cx="123" cy="711" r="5" fill="#D4D4D4"/>
+  <text x="18" y="750" class="t10 muted">LINKED VIEW</text>
+  <rect x="19" y="761" width="13" height="13" rx="1" fill="#007ACC"/><path d="M22 767l3 3 5-6" fill="none" stroke="#fff" stroke-width="1.3"/><text x="43" y="772" class="t12">Scroll / slice</text>
+  <rect x="19" y="789" width="13" height="13" rx="1" fill="#007ACC"/><path d="M22 795l3 3 5-6" fill="none" stroke="#fff" stroke-width="1.3"/><text x="43" y="800" class="t12">Zoom / pan</text>
+  <rect x="18" y="831" width="118" height="31" rx="4" fill="#0E639C"/><text x="45" y="851" class="t12 bright">Reset view</text><rect x="148" y="831" width="120" height="31" rx="4" fill="#25272B" stroke="#45484E"/><text x="179" y="851" class="t12">Run model</text>
+  <line x1="16" y1="891" x2="268" y2="891" stroke="#303238"/><path d="M19 909l5 5-5 5" class="strokeM"/><text x="36" y="918" class="t11 semi bright">METADATA</text><path d="M19 939l5 5-5 5" class="strokeM"/><text x="36" y="948" class="t11 semi bright">RUN HISTORY</text>
+
+  <!-- one product navigation row -->
+  <rect x="284" y="64" width="1316" height="52" fill="#1C1E21"/><line x1="284" y1="115.5" x2="1600" y2="115.5" stroke="#303238"/>
+  <text x="308" y="96" class="t12 semi bright">Comparison</text><rect x="306" y="113" width="78" height="2" fill="#007ACC"/><text x="414" y="96" class="t12 muted">Metadata</text><text x="494" y="96" class="t12 muted">Measurements</text><text x="604" y="96" class="t12 muted">Provenance</text>
+  <line x1="704" y1="78" x2="704" y2="103" stroke="#34363B"/><path d="M724 84h14v11h-14zM731 81v17" class="strokeM"/><text x="747" y="96" class="t11">Linked scroll</text><text x="882" y="96" class="t11 muted">Fit</text><text x="918" y="96" class="t11 muted">1:1</text><text x="954" y="96" class="t11 bright">100%</text>
+  <text x="1472" y="88" class="t10 muted">SLICE</text><text x="1510" y="99" class="t13 semi bright">48 / 128</text>
+
+  <!-- side-by-side linked viewers -->
+  <rect x="284" y="116" width="1316" height="476" fill="#151719"/>
+  <rect x="304" y="132" width="616" height="444" rx="5" fill="#1B1D20" stroke="#383B40"/><rect x="936" y="132" width="644" height="444" rx="5" fill="#1B1D20" stroke="#383B40"/>
+  <circle cx="320" cy="153" r="3.5" fill="#858585"/><text x="333" y="157" class="t12 semi bright">Original OCT</text><text x="409" y="157" class="t10 muted">SOURCE</text><text x="822" y="157" class="t10 mono muted">512 × 496</text><text x="892" y="157" class="t14 muted">•••</text>
+  <circle cx="952" cy="153" r="3.5" fill="#4EC9B0"/><text x="965" y="157" class="t12 semi bright">Model output</text><text x="1049" y="157" class="t10 cyan">CYST v1.4</text><text x="1493" y="157" class="t10 cyan">DERIVED</text><text x="1551" y="157" class="t14 muted">•••</text>
+  <g transform="translate(319 174)"><use href="#oct"/></g><g transform="translate(951 174)"><use href="#oct"/><ellipse cx="249" cy="184" rx="30" ry="16" fill="#4EC9B0" opacity=".3" stroke="#4EC9B0" stroke-width="2"/><ellipse cx="300" cy="208" rx="19" ry="11" fill="#4EC9B0" opacity=".33" stroke="#4EC9B0"/><ellipse cx="205" cy="215" rx="13" ry="8" fill="#4EC9B0" opacity=".33" stroke="#4EC9B0"/><path d="M50 149c74-39 142-35 215-4 78 34 145 31 211-3" fill="none" stroke="#C586C0" stroke-width="1.8" stroke-dasharray="5 4"/></g>
+  <rect x="332" y="187" width="110" height="20" rx="2" fill="#111317" opacity=".9"/><text x="342" y="201" class="t10 mono">B-SCAN 48 / 128</text><rect x="964" y="187" width="138" height="20" rx="2" fill="#111317" opacity=".9"/><circle cx="976" cy="197" r="3" fill="#4EC9B0"/><text x="986" y="201" class="t10 mono">MASK + CONTOUR</text>
+  <text x="319" y="530" class="t10 mono muted">Window 52 / 106</text><text x="500" y="530" class="t10 mono muted">Zoom 100%</text><text x="838" y="530" class="t10 mono cyan">Calibrated</text><text x="951" y="530" class="t10 mono muted">3 regions · 0.84 mm²</text><text x="1171" y="530" class="t10 mono muted">Confidence 94%</text><text x="1517" y="530" class="t10 mono cyan">Linked</text>
+  <line x1="319" y1="554" x2="1565" y2="554" stroke="#414349" stroke-width="4" stroke-linecap="round"/><line x1="319" y1="554" x2="790" y2="554" stroke="#007ACC" stroke-width="4"/><circle cx="790" cy="554" r="7" fill="#1B1D20" stroke="#75BEFF" stroke-width="2"/><rect x="765" y="562" width="52" height="17" rx="2" fill="#25272B"/><text x="775" y="574" class="t10 mono bright">48/128</text>
+
+  <!-- restored clinical bottom layout -->
+  <rect x="284" y="592" width="1316" height="384" fill="#181A1D"/><line x1="284" y1="592" x2="1600" y2="592" stroke="#303238"/>
+  <text x="308" y="625" class="t14 semi bright">Study insights</text><text x="1463" y="625" class="t10 muted">SLICE 48 · LIVE</text><line x1="304" y1="642" x2="1580" y2="642" stroke="#303238"/>
+  <rect x="304" y="660" width="246" height="112" rx="5" fill="#202226" stroke="#373A40"/><text x="320" y="682" class="t10 muted">CURRENT SLICE</text><text x="320" y="717" class="t20 bold bright">0.84 mm²</text><text x="320" y="743" class="t11 muted">Estimated cyst area</text><rect x="485" y="676" width="48" height="22" rx="11" fill="#193C3A"/><text x="498" y="691" class="t10 cyan">+8%</text>
+  <rect x="566" y="660" width="246" height="112" rx="5" fill="#202226" stroke="#373A40"/><text x="582" y="682" class="t10 muted">VOLUME</text><text x="582" y="717" class="t20 bold bright">11.6 mm³</text><text x="582" y="743" class="t11 muted">Total segmented burden</text><circle cx="778" cy="707" r="17" fill="#1D352C"/><path d="M768 708l7 7 13-18" fill="none" stroke="#4EC9B0" stroke-width="2"/>
+  <rect x="828" y="660" width="246" height="112" rx="5" fill="#202226" stroke="#373A40"/><text x="844" y="682" class="t10 muted">MODEL CONFIDENCE</text><text x="844" y="717" class="t20 bold bright">94%</text><text x="844" y="743" class="t11 muted">High · current slice</text><path d="M1015 731a27 27 0 1 1 23 7" fill="none" stroke="#3D4147" stroke-width="7"/><path d="M1015 731a27 27 0 1 1 23 7" fill="none" stroke="#4EC9B0" stroke-width="7" stroke-dasharray="148 22"/>
+  <rect x="1090" y="660" width="490" height="214" rx="5" fill="#202226" stroke="#373A40"/><text x="1106" y="682" class="t10 muted">CYST AREA ACROSS SLICES</text><text x="1503" y="682" class="t10 blue">Area (mm²)</text><line x1="1126" y1="828" x2="1554" y2="828" stroke="#464A50"/><line x1="1126" y1="704" x2="1126" y2="828" stroke="#464A50"/><path d="M1127 814c39-2 64-12 92-25 34-16 52-12 76-43 28-36 52-12 76-34 29-26 62-6 90 22 31 31 57 37 92 42" fill="none" stroke="#75BEFF" stroke-width="2.5"/><path d="M1127 814c39-2 64-12 92-25 34-16 52-12 76-43 28-36 52-12 76-34 29-26 62-6 90 22 31 31 57 37 92 42v32h-426z" fill="#007ACC" opacity=".12"/><line x1="1295" y1="700" x2="1295" y2="828" stroke="#4EC9B0" stroke-dasharray="4 3"/><circle cx="1295" cy="746" r="5" fill="#4EC9B0"/><text x="1122" y="849" class="t10 muted">1</text><text x="1290" y="849" class="t10 muted">48</text><text x="1538" y="849" class="t10 muted">128</text>
+  <text x="304" y="810" class="t10 muted">SCAN QUALITY</text><rect x="304" y="822" width="126" height="28" rx="14" fill="#19362D"/><circle cx="321" cy="836" r="4" fill="#4EC9B0"/><text x="332" y="840" class="t11 cyan">Good · 92/100</text><text x="448" y="840" class="t11 muted">No missing slices</text><text x="570" y="840" class="t11 muted">Spacing calibrated</text>
+  <text x="304" y="884" class="t10 muted">RUN PROVENANCE</text><text x="304" y="906" class="t11 bright">CYST v1.4 · GPU · 8.4 s · completed 10:42</text><text x="622" y="906" class="t11 muted">Preprocessing: pad to 512 × 512 · normalized 0–1</text>
+  <rect x="304" y="928" width="770" height="30" rx="4" fill="#29261D" stroke="#5B4B25"/><circle cx="320" cy="943" r="7" fill="#D7BA7D"/><text x="317.5" y="947" class="t11 bold" fill="#191919">!</text><text x="335" y="947" class="t11 amber">Clinical review required — verify model output against the source OCT.</text>
+
+  <rect x="0" y="976" width="1600" height="24" fill="#0E639C"/><text x="14" y="992" class="t11 bright">Offline · Local</text><text x="117" y="992" class="t11 bright">OCT-2408</text><text x="194" y="992" class="t11 bright">OD</text><text x="235" y="992" class="t11 bright">Slice 48 / 128</text><text x="1366" y="992" class="t11 bright">CYST v1.4</text><text x="1444" y="992" class="t11 bright">94%</text><text x="1490" y="992" class="t11 bright">GPU</text><text x="1535" y="992" class="t11 bright">Ready</text>
+</svg>
