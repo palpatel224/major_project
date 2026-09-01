@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "identifier": "com.octinsight.desktop",
   "build": {
-    "beforeDevCommand": "cd ../frontend && npm run dev",
+    "beforeDevCommand": "cd /Users/PalPatel/Documents/Pal/study\\ material/Major\\ Project/major_project/frontend && npm run dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "cd ../frontend && npm run build",
+    "beforeBuildCommand": "cd /Users/PalPatel/Documents/Pal/study\\ material/Major\\ Project/major_project/frontend && npm run build",
     "frontendDist": "../frontend/dist"
   },
   "app": {
