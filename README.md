@@ -32,6 +32,15 @@ Install dependencies for the Python sidecar:
 cd python
 uv sync
 ```
+*Note: The sidecar uses `pydicom` to parse DICOM files.*
+
+### 2. Loading a DICOM Study
+To use the DICOM Viewer:
+1. Run the application (see instructions below).
+2. Click **Open study** in the top AppBar.
+3. Select a folder containing `.dcm` files.
+4. The Python sidecar will parse the files into `.raw` buffers in `/tmp/oct-insight/`.
+5. The frontend will render them using CornerstoneJS. Use your mouse wheel to scroll through slices.
 
 ### 2. Development
 

@@ -21,6 +21,7 @@ The architecture strictly divides concerns into three pillars. Never bleed respo
 ### TypeScript & React (Frontend)
 - **Strict Typing**: Avoid `any`. Define strict interfaces for all models and API responses.
 - **Styling**: Use Tailwind CSS utility classes exclusively. Avoid writing custom CSS unless absolutely necessary (e.g., specific Cornerstone canvas overrides).
+- **Design Tokens**: Standard design tokens (colors, fonts) are defined as CSS variables in `index.css` via the Tailwind v4 `@theme` directive. Use variables like `var(--color-primary-accent)` or Tailwind utilities like `bg-primary-accent`.
 - **State Management**: Keep state as close to where it's used as possible. For complex global states (like active study or linked viewer states), use React Context or a lightweight state manager like Zustand.
 
 ### Rust (Tauri Backend)
@@ -36,7 +37,7 @@ The architecture strictly divides concerns into three pillars. Never bleed respo
 
 **"Zero-Lag IPC for Heavy Data"**
 - Do **NOT** serialize massive 3D volumetric arrays (OCT scans) into JSON to pass between Python, Rust, and the frontend. 
-- **Workflow**: Python processes the array -> Dumps binary `.raw` buffers to a temporary cache -> Tauri serves them via the custom `oct-asset://` protocol -> Frontend `CornerstoneJS` fetches and renders.
+- **Workflow**: Python processes the array -> Dumps binary `.raw` buffers to a temporary cache -> Tauri serves them via the custom `oct-asset://` protocol -> Frontend `CornerstoneJS` fetches and renders via the custom `octAsset` image loader pattern.
 
 ## 4. Documentation Rules
 
