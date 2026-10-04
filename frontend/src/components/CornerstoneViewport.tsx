@@ -1,42 +1,93 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as cornerstone from '@cornerstonejs/core';
+import { StudyManifest } from '../hooks/useStudyLoader';
 
-export default function CornerstoneViewport() {
-    const viewerRef = useRef<HTMLDivElement>(null);
+interface CornerstoneViewportProps {
+  viewportId: string;
+  sliceIndex: number;
+  manifest: StudyManifest;
+}
 
-    useEffect(() => {
-        const setupCornerstone = async () => {
-            if (!viewerRef.current) return;
+export default function CornerstoneViewport({ viewportId, sliceIndex, manifest }: CornerstoneViewportProps) {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const renderingEngineId = `engine_${viewportId}`;
+  
+  useEffect(() => {
+    let renderingEngine: cornerstone.RenderingEngine;
+    
+    const setup = async () => {
+      try {
+        if (!cornerstone.isInitialized()) {
+          console.debug("Initializing Cornerstone core...");
+          await cornerstone.init();
+        }
 
-            // Initialize cornerstone if it hasn't been initialized
-            try {
-                await cornerstone.init();
-                console.log("Cornerstone core initialized");
-            } catch (error) {
-                console.error("Cornerstone init failed", error);
-            }
+        if (!elementRef.current) return;
 
-            // In a real application, you would:
-            // 1. Create a rendering engine
-            // 2. Create a viewport
-            // 3. Bind the element to the viewport
-            // 4. Load the image/volume via a custom image loader (using the tauri:// protocol)
-            // 5. Render
-        };
-
-        setupCornerstone();
+        renderingEngine = new cornerstone.RenderingEngine(renderingEngineId);
         
-        return () => {
-            // Cleanup on unmount
+        const viewportInput = {
+          viewportId,
+          type: cornerstone.Enums.ViewportType.STACK,
+          element: elementRef.current,
+          defaultOptions: {
+            background: [0, 0, 0] as cornerstone.Types.Point3,
+          },
         };
-    }, []);
 
-    return (
-        <div 
-            ref={viewerRef}
-            className="w-full h-full bg-black rounded-lg overflow-hidden relative border border-gray-800 flex items-center justify-center text-gray-500"
-        >
-            <span>Cornerstone WebGL Viewport</span>
-        </div>
-    );
+        renderingEngine.enableElement(viewportInput);
+        
+        console.debug(`Viewport ${viewportId} initialized.`);
+      } catch (e) {
+        console.error("Cornerstone setup failed", e);
+      }
+    };
+    
+    setup();
+    
+    return () => {
+      if (renderingEngine) {
+        renderingEngine.disableElement(viewportId);
+        renderingEngine.destroy();
+      }
+    };
+  }, [viewportId, renderingEngineId]);
+
+  useEffect(() => {
+    const updateImage = async () => {
+      if (!cornerstone.isInitialized() || !manifest || !manifest.sliceFiles[sliceIndex]) return;
+
+      const engine = cornerstone.getRenderingEngine(renderingEngineId);
+      if (!engine) return;
+
+      const viewport = engine.getViewport(viewportId) as cornerstone.Types.IStackViewport;
+      if (!viewport) return;
+
+      // Ensure the loader manifest is updated
+      // We assume setLoaderManifest has been called or we can just pass the manifest to it.
+      // But we can also just set it here to be safe.
+      const { setLoaderManifest } = await import('../lib/cornerstoneImageLoader');
+      setLoaderManifest(manifest);
+
+      const imageId = `octAsset://${manifest.sliceFiles[sliceIndex]}`;
+      
+      try {
+        console.debug(`Setting stack for viewport ${viewportId}, slice ${sliceIndex}`);
+        await viewport.setStack([imageId]);
+        viewport.render();
+      } catch (err) {
+        console.error(`Error rendering slice ${sliceIndex} on viewport ${viewportId}:`, err);
+      }
+    };
+    
+    updateImage();
+  }, [sliceIndex, manifest, viewportId, renderingEngineId]);
+
+  return (
+    <div 
+      ref={elementRef}
+      className="w-full h-full bg-black relative"
+      onContextMenu={(e) => e.preventDefault()}
+    />
+  );
 }

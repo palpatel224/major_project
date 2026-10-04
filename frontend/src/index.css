@@ -1,14 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-page-bg: #151719;
+  --color-appbar-bg: #1C1E21;
+  --color-sidebar-bg: #181A1D;
+  --color-panel-bg: #1B1D20;
+  --color-card-bg: #202226;
+  --color-border-primary: #303238;
+  --color-border-light: #383B40;
+  --color-control-bg: #25272B;
+  --color-primary-accent: #007ACC;
+  --color-cyan-accent: #4EC9B0;
+  --color-purple-accent: #C586C0;
+  --color-amber-accent: #D7BA7D;
+  --color-blue-text: #75BEFF;
+  --color-bright-text: #F0F0F0;
+  --color-default-text: #D4D4D4;
+  --color-muted-text: #8B949E;
+  --color-status-bar: #0E639C;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "SF Mono", "Menlo", monospace;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color-scheme: dark;
+  color: var(--color-default-text);
+  background-color: var(--color-page-bg);
+  font-family: var(--font-sans);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,4 +40,9 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+/* Custom CSS for Cornerstone canvas overrides */
+.cornerstone-canvas {
+  outline: none !important;
 }
