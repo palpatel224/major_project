@@ -40,15 +40,23 @@ def run_inference(model_path: str, study_path: str):
     print(f"Output written to {output_buffer_path}. Accessible via oct-asset://localhost/dummy_result.raw", flush=True)
     print("Inference completed successfully.", flush=True)
 
+import dicom_parser
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="OCT Insight Python Sidecar")
-    parser.add_argument("--model", type=str, required=True, help="Path to the model")
+    parser.add_argument("--mode", type=str, choices=["inference", "parse-dicom"], default="inference", help="Mode of operation")
+    parser.add_argument("--model", type=str, help="Path to the model (required for inference)")
     parser.add_argument("--study", type=str, required=True, help="Path to the DICOM/OCT study")
     
     args = parser.parse_args()
     
     try:
-        run_inference(args.model, args.study)
+        if args.mode == "parse-dicom":
+            dicom_parser.parse_study(args.study)
+        else:
+            if not args.model:
+                parser.error("--model is required in inference mode")
+            run_inference(args.model, args.study)
     except Exception as e:
-        print(f"Error during inference: {e}", file=sys.stderr, flush=True)
+        print(f"Error during execution: {e}", file=sys.stderr, flush=True)
         sys.exit(1)
