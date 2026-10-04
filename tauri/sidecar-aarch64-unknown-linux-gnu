@@ -1,0 +1,14 @@
+#!/bin/bash
+# WHY: Tauri copies this script to tauri/target/debug/sidecar at build time.
+# From there, ../../../python resolves to: debug -> target -> tauri -> project_root/python
+# This variant targets aarch64 (ARM64) Linux machines (e.g. Raspberry Pi 4, AWS Graviton).
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PYTHON_DIR="$DIR/../../../python"
+cd "$PYTHON_DIR" || { echo "ERROR: Could not cd to python dir: $PYTHON_DIR" >&2; exit 1; }
+
+# WHY: On Linux, prefer uv if installed, otherwise fall back to python3
+if command -v uv &>/dev/null; then
+    uv run python main.py "$@"
+else
+    python3 main.py "$@"
+fi

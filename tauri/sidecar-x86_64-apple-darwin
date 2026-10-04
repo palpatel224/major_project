@@ -1,0 +1,8 @@
+#!/bin/bash
+# WHY: Tauri copies this script to tauri/target/debug/sidecar at build time.
+# From there, ../../../python resolves to: debug -> target -> tauri -> project_root/python
+# This variant targets Intel (x86_64) macOS machines.
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PYTHON_DIR="$DIR/../../../python"
+cd "$PYTHON_DIR" || { echo "ERROR: Could not cd to python dir: $PYTHON_DIR" >&2; exit 1; }
+uv run python main.py "$@"

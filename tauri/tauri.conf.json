@@ -12,13 +12,15 @@
   "app": {
     "windows": [
       {
-        "title": "major_project",
-        "width": 800,
-        "height": 600
+        "title": "OCT Insight Desktop",
+        "width": 1280,
+        "height": 800,
+        "decorations": true,
+        "resizable": true
       }
     ],
     "security": {
-      "csp": "default-src 'self' 'unsafe-inline' 'unsafe-eval' tauri: asset:; img-src 'self' data: blob: tauri: asset:; connect-src 'self' tauri: asset:"
+      "csp": "default-src 'self' 'unsafe-inline' 'unsafe-eval' tauri: asset: oct-asset:; img-src 'self' data: blob: tauri: asset: oct-asset:; connect-src 'self' tauri: asset: oct-asset:"
     }
   },
   "bundle": {

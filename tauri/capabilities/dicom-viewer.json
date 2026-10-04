@@ -1,0 +1,11 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "dicom-viewer",
+  "description": "Capability for DICOM viewer file picking and reading.",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "dialog:default"
+  ]
+}
