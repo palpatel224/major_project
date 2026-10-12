@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import * as cornerstone from '@cornerstonejs/core';
 import { StudyManifest } from '../hooks/useStudyLoader';
 
@@ -8,16 +8,21 @@ interface CornerstoneViewportProps {
   manifest: StudyManifest;
 }
 
+// WHY: This component encapsulates a CornerstoneJS Stack Viewport within a responsive container.
+// It uses a ResizeObserver so that whenever the window changes size (e.g. laptop dimension changes,
+// sidebar toggle, or bottom panel expansion), Cornerstone re-evaluates the canvas dimensions,
+// preventing distorted aspect ratios or clipped b-scans.
 export default function CornerstoneViewport({ viewportId, sliceIndex, manifest }: CornerstoneViewportProps) {
   const elementRef = useRef<HTMLDivElement>(null);
   const renderingEngineId = `engine_${viewportId}`;
   
   useEffect(() => {
-    let renderingEngine: cornerstone.RenderingEngine;
+    let renderingEngine: cornerstone.RenderingEngine | null = null;
+    let resizeObserver: ResizeObserver | null = null;
     
     const setup = async () => {
       try {
-        if (!cornerstone.isInitialized()) {
+        if (!cornerstone.isCornerstoneInitialized()) {
           console.debug("Initializing Cornerstone core...");
           await cornerstone.init();
         }
@@ -36,8 +41,18 @@ export default function CornerstoneViewport({ viewportId, sliceIndex, manifest }
         };
 
         renderingEngine.enableElement(viewportInput);
+        console.debug(`Viewport ${viewportId} enabled on rendering engine ${renderingEngineId}`);
+
+        // Responsive ResizeObserver: Triggers renderingEngine.resize whenever the container's
+        // dimensions change due to window resizing or panel collapsing
+        resizeObserver = new ResizeObserver(() => {
+          if (renderingEngine && elementRef.current) {
+            console.debug(`ResizeObserver triggered for viewport ${viewportId}: ${elementRef.current.clientWidth}x${elementRef.current.clientHeight}`);
+            renderingEngine.resize(true, false);
+          }
+        });
+        resizeObserver.observe(elementRef.current);
         
-        console.debug(`Viewport ${viewportId} initialized.`);
       } catch (e) {
         console.error("Cornerstone setup failed", e);
       }
@@ -46,16 +61,23 @@ export default function CornerstoneViewport({ viewportId, sliceIndex, manifest }
     setup();
     
     return () => {
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
       if (renderingEngine) {
-        renderingEngine.disableElement(viewportId);
-        renderingEngine.destroy();
+        try {
+          renderingEngine.disableElement(viewportId);
+          renderingEngine.destroy();
+        } catch (e) {
+          console.error(`Error destroying rendering engine ${renderingEngineId}:`, e);
+        }
       }
     };
   }, [viewportId, renderingEngineId]);
 
   useEffect(() => {
     const updateImage = async () => {
-      if (!cornerstone.isInitialized() || !manifest || !manifest.sliceFiles[sliceIndex]) return;
+      if (!cornerstone.isCornerstoneInitialized() || !manifest || !manifest.sliceFiles[sliceIndex]) return;
 
       const engine = cornerstone.getRenderingEngine(renderingEngineId);
       if (!engine) return;
